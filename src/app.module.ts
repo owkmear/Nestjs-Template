@@ -1,15 +1,14 @@
-import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config'
-import configuration from './config/configuration';
-import { CatsModule } from './cats/cats.module';
+import { Module } from "@nestjs/common";
+import { ConfigModule } from "@nestjs/config";
+import configuration from "./config/configuration";
+import { ArticlesModule } from "./articles/articles.module";
 
 @Module({
   imports: [
-    CatsModule,
+    ArticlesModule,
     ConfigModule.forRoot({
-      load: [configuration]
-    })
-  ]
+      load: [configuration],
+    }),
+  ],
 })
-
 export class AppModule {}
