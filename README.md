@@ -1,9 +1,27 @@
+## Preparing
+
+Start docker service with `mongo` database. Ports parameters are specified in `ports` section: `27013:27017`. `27013` would be outer port and `27017` would be inner port. Database name specified in `MONGODB_DATABASE` property.
+```bash
+sudo docker-compose up
+sudo docker-compose down
+```
+
+File `.example.env` contain example of `PORT` and `MONGO_URL` parameters for application.
+
+```bash
+PORT=5001
+MONGO_URL=mongodb://localhost:27013/test
+```
+
+For manage mongo database may be used `MongoDB Compass`. Connection string to connect docker container would be `mongodb://localhost:27013/test`. Database name would be `test` and collection be `news`.
+
 ## Running
 
 ```bash
-# Development
 npm run start:dev
 ```
+
+Application starts on port `5001` and serves by `http://127.0.0.1:5001/news`.
 
 ## API
 
