@@ -1,5 +1,10 @@
 ## Preparing
 
+For project needs to npm more or equal `v18.15.0`.
+```bash
+nvm use stable
+```
+
 Start docker service with `mongo` database. Ports parameters are specified in `ports` section: `27013:27017`. `27013` would be outer port and `27017` would be inner port. Database name specified in `MONGODB_DATABASE` property.
 ```bash
 sudo docker-compose up
@@ -26,6 +31,13 @@ npm run start:dev
 ```
 
 Application starts on port `5001` and serves by `http://127.0.0.1:5001/articles`.
+
+## Development
+
+Generate scaffolding code
+```bash
+nest g resource news
+```
 
 ## API
 
