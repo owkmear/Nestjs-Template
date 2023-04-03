@@ -4,6 +4,10 @@ Start docker service with `mongo` database. Ports parameters are specified in `p
 ```bash
 sudo docker-compose up
 sudo docker-compose down
+
+# Remove container
+sudo docker exec -it acacpq56h7t_mongodb_1 bash
+kill 1
 ```
 
 File `.example.env` contain example of `PORT` and `MONGO_URL` parameters for application.
