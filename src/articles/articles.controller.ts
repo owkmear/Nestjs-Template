@@ -19,17 +19,17 @@ export class ArticlesController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
+  async findOne(@Param('id') id: string) {
     return this.articlesService.findOne(+id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateArticleDto: UpdateArticleDto) {
+  async update(@Param('id') id: string, @Body() updateArticleDto: UpdateArticleDto) {
     return this.articlesService.update(+id, updateArticleDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
+  async remove(@Param('id') id: string) {
     return this.articlesService.remove(+id);
   }
 }
