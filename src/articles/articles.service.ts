@@ -19,15 +19,15 @@ export class ArticlesService {
     return this.articleModel.find().exec();
   }
 
-  async findOne(id: number) {
+  async findOne(id: string) {
     return `This action returns a #${id} article`;
   }
 
-  async update(id: number, updateArticleDto: UpdateArticleDto) {
+  async update(id: string, updateArticleDto: UpdateArticleDto) {
     return `This action updates a #${id} article`;
   }
 
-  async remove(id: number) {
+  async remove(id: string) {
     return `This action removes a #${id} article`;
   }
 }
