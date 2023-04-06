@@ -28,6 +28,7 @@ export class ArticlesService {
   }
 
   async remove(id: string) {
-    return `This action removes a #${id} article`;
+    const result = await this.articleModel.deleteOne({ _id: { $eq: id } });
+    return result.deletedCount === 1 ? 'Статья удалена успешно' : 'Статья для удаления не найдена';
   }
 }
