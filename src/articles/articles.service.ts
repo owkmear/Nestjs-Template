@@ -20,7 +20,12 @@ export class ArticlesService {
   }
 
   async findOne(id: string) {
-    return `This action returns a #${id} article`;
+    try {
+      return await this.articleModel.findOne({ _id: { $eq: id } });
+    } catch (error) {
+      console.log(error);
+      return 'Ошибка поиска одной записи';
+    }
   }
 
   async update(id: string, updateArticleDto: UpdateArticleDto) {
