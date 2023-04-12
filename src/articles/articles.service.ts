@@ -29,7 +29,14 @@ export class ArticlesService {
   }
 
   async update(id: string, updateArticleDto: UpdateArticleDto) {
-    return `This action updates a #${id} article`;
+    try {
+      const item = await this.articleModel.findById(id);
+      await item.updateOne(updateArticleDto, { runValidators: true });
+      return await this.articleModel.findById(id);
+    } catch (error) {
+      console.log(error);
+      return "Ошибка обновления записи";
+    }
   }
 
   async remove(id: string) {
